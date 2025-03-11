@@ -1,20 +1,23 @@
 'use client'
 
 import { IconButton } from '@material-tailwind/react'
+import { getImageURL } from 'utils/supabase/storage'
 
-export default function DropboxImage() {
+export default function DropboxImage(props) {
+  const { name } = props
+
   return (
-    <div className='relative w-full flex flex-col gabp-2 p-4 border border-gray-100 rounded-2xl shadow-md'>
+    <div className='relative w-full flex flex-col gap-2 p-4 border border-gray-100 rounded-2xl shadow-md'>
       {/* Image */}
       <div>
         <img
-          src='/images/cutedog.jpeg'
+          src={getImageURL(name)}
           alt='cutedog'
           className='w-full aspect-square rounded-sm'
         />
       </div>
       {/* FileName */}
-      <div>cutedog.jpeg</div>
+      <p className='text-sm break-words'>{name}</p>
       {/* Delete Image Button */}
       <div className='absolute top-4 right-4'>
         <IconButton
