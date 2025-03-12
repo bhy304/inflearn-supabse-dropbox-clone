@@ -6,9 +6,7 @@ import { deleteFile } from 'actions/storage-actions'
 import { queryClient } from 'config/ReactQueryClientProvider'
 import { getImageURL } from 'utils/supabase/storage'
 
-export default function DropboxImage(props) {
-  const { name } = props
-
+export default function DropboxImage({ name }: { name: string }) {
   const deleteFileMutaion = useMutation({
     mutationFn: deleteFile,
     onSuccess: () => {
