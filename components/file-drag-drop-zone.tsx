@@ -43,9 +43,9 @@ export default function FileDragDropZone() {
       {uploadImageMutation.isPending ? (
         <Spinner />
       ) : isDragActive ? (
-        <p>Drop the files here.</p>
+        <p className="text-gray-500">Drop the files here.</p>
       ) : (
-        <p>Drag and drop some files here, or click to select files</p>
+        <p className="text-gray-500">Drag and drop some files here, or click to select files</p>
       )}
     </div>
   )
